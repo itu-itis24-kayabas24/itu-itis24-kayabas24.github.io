@@ -31,6 +31,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .name{
@@ -123,20 +124,22 @@ header{
   }
 
   .contact-link{
-
-    color: #D9D9D9;
-    text-decoration: underline;
-    font-family: 'Space Grotesk Bold';
-    font-size: 20px;
-    transition: all 0.5s ease-in-out;
-    letter-spacing: 2px;
+    color: white;
+    background-color: #4ce19e;
+    padding: 5px 6px;
+    border: solid #4ce19e;
+    border-radius: 3px;
+    transition: all ease-in-out 300ms;
 
   }
 
   .contact-link:hover{
-    color: #4ce19e;
-
+    color: #141414;
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
   }
+
+
 
   .line{
     width: 100%;
@@ -380,8 +383,18 @@ header{
   padding: 5px 6px;
   border: solid #4ce19e;
   border-radius: 3px;
-  position: absolute;
-  top: 3px;
-  right: 18px;
+  transition: all ease-in-out 300ms;
+
 }
 
+.wordgame:hover{
+  color: #141414;
+  background-color: #D9D9D9;
+  border-color: #D9D9D9;
+}
+
+.a{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
