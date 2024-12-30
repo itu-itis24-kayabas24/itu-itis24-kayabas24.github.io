@@ -11,37 +11,65 @@ body{
     overflow: hidden;
     height: 100vh;
     position: relative;
+    width: 100%;
 }
 
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
+    
     background-color: #242424;
-    height: 100px;
+    height: 60px;
+
+    
 }
 
+header .back{
+    margin-left: 10px;
+    margin-top: 5px;
+
+}
+.back img{
+    width: 30px;
+    height: auto;
+}
 header h1{
-    font-size: 60px;
+    font-size: 30px;
     font-family: 'Space Grotesk Bold';
+    color: #D9D9D9;
 }
 
-header .lives ul{
+.lives ul{
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
 }
 
+.lives{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+
+.refresh{
+
+    margin-right: 10px;
+
+}
 .game{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    height: auto;
+    height: 100vh;
+    position: relative;
 }
 
 .word{
@@ -52,8 +80,8 @@ header .lives ul{
 }
 
 .letter{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -64,5 +92,23 @@ header .lives ul{
 
 .letter span{
     font-size: 100px;
+    color: #D9D9D9;
+}
+
+.refresh{
+    background-color: #1d27b4;
+    color: white;
+    border:#1d27b4 solid;
+    border-radius: 5px;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.refresh img{
+    width: 20px;
+    height: auto;
 }
 
