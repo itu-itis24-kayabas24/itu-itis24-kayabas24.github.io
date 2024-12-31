@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="26.458334mm"
-   height="26.458334mm"
-   viewBox="0 0 26.458335 26.458336"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="K.svg"
+   sodipodi:docname="drawing.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="3.9458701"
-     inkscape:cx="40.675439"
-     inkscape:cy="29.017681"
+     inkscape:zoom="0.69753788"
+     inkscape:cx="396.39424"
+     inkscape:cy="561.25984"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -37,18 +37,17 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-155.13793)">
+     id="layer1">
     <text
        xml:space="preserve"
-       style="font-weight:600;font-size:26.4583px;font-family:'Space Grotesk';-inkscape-font-specification:'Space Grotesk Semi-Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#d9d9d9;stroke-width:0.132"
-       x="160.31055"
-       y="22.489573"
+       style="font-size:26.4583px;font-family:'Conduit ITC';-inkscape-font-specification:'Conduit ITC';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.132"
+       x="55.758621"
+       y="40.206898"
        id="text1"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="stroke-width:0.132"
-         x="160.31055"
-         y="22.489573">K</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:26.4583px;font-family:'Space Grotesk';-inkscape-font-specification:'Space Grotesk Semi-Bold';fill:#d9d9d9;fill-opacity:1;stroke-width:0.132"
+         x="55.758621"
+         y="40.206898">S</tspan></text>
   </g>
 </svg>

@@ -97,9 +97,7 @@ header h1{
     transition: transform 0.999s;
   }
   
-  .letter:hover .content {
-    transform: rotateY(180deg);
-  }
+
   
   .outer,
   .inner {
@@ -135,9 +133,10 @@ header h1{
     transform: rotateY(180deg);
   }
 
-  .inner span{
+  .inner img{
 
-    font-size: 100px;
+    width: 100px;
+    height: 100px;
   }
   
 
@@ -182,7 +181,9 @@ header h1{
     font-size: 1em;
     line-height: 26px;
     padding-bottom: 5px;
-    width: 110px;
+    width: 135px;
+    text-transform: uppercase;
+
 
 }
 

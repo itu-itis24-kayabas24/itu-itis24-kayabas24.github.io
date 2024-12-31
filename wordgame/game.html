@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/fonts/stylesheet.css">
 </head>
 
-<script src="game_script.js"></script>
+
 
 <body>
 
@@ -45,44 +45,47 @@
             <div class="letter">
                 <div class="content">
                     <div class="outer"></div>
-                    <div class="inner"><span>A</span></div>
+                    <div class="inner"><img src="../assets/images/S.svg" alt=""></div>
                 </div>
             </div>
+
             <div class="letter">
                 <div class="content">
                     <div class="outer"></div>
-                    <div class="inner"><span>A</span></div>
+                    <div class="inner"><img src="../assets/images/T.svg" alt=""></div>
                 </div>
             </div>
+
             <div class="letter">
                 <div class="content">
                     <div class="outer"></div>
-                    <div class="inner"><span>A</span></div>
+                    <div class="inner"><img src="../assets/images/O.svg" alt=""></div>
                 </div>
             </div>
+
             <div class="letter">
                 <div class="content">
                     <div class="outer"></div>
-                    <div class="inner"><span>A</span></div>
+                    <div class="inner"><img src="../assets/images/C.svg" alt=""></div>
                 </div>
             </div>
+
             <div class="letter">
                 <div class="content">
                     <div class="outer"></div>
-                    <div class="inner"><span>A</span></div>
+                    <div class="inner"><img src="../assets/images/K.svg" alt=""></div>
                 </div>
             </div>
-                
-                
+                      
         </div>
 
 
         <div class="letter_submit">
           
                 <div class="letter_input">
-                    <input autocapitalize="on"  placeholder="Enter a letter" type="text">
+                    <input autocomplete="off" id="input" onkeydown="return /[a-zA-Z]/i.test(event.key)" autocapitalize="characters"  placeholder="Enter a letter" type="text">
                 </div>
-                <button type="submit">
+                <button id="submit" type="submit">
                     <span>SUBMIT</span>
                 </button>
           
@@ -102,5 +105,7 @@
 
 
 </body>
+
+<script src="game_script.js"></script>
 </html>
 
