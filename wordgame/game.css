@@ -240,3 +240,36 @@ header h1{
 
 
   
+
+.message{
+
+    background-color: #242424;
+    border: solid #242424;
+    border-radius: 10px;
+    color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    width: 350px;
+    height: 250px;
+    top: 0px;
+    left: 0px;
+    flex-direction: column;
+    
+
+}
+
+.popup{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+
+
+
+}
