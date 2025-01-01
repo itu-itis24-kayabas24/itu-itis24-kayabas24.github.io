@@ -1,29 +1,25 @@
 /* Variables*/
-
 const wanted_word= "STOCK"
 let lives_count = 3
 let tried_letters = []
 let score = 0
-
-let restart_button = document.getElementById("refresh")
-
+let score_ui = document.querySelectorAll(".score")
+let restart_buttons = document.querySelectorAll(".refresh")
 let remaining_lives = document.getElementById("remaining_lives")
-
 let letters =  document.querySelectorAll(".letter")
-
-
 let input = document.getElementById('input')
 let submit_button= document.getElementById("submit")
-
 let win_popup = document.getElementById("win")
-
 let gameover_popup= document.getElementById("gameover")
-
 let tried_letters_list = document.querySelector(".letter_list")
 
-restart_button.addEventListener('click', restart_game)
+restart_buttons.forEach(element => {
+    element.addEventListener('click', restart_game)
+});
 
 submit_button.addEventListener('click', submit_letter)
+
+
 
 function lives_count_adjuster(lives_count){
 
@@ -36,17 +32,49 @@ function lives_count_adjuster(lives_count){
 
 }
 
- function restart_game() {
+function restart_game() {
     lives_count = 3
     lives_count_adjuster(lives_count)
     score = 0
-    /*
-    tried letters 0
-    harfler döndür
-    */
+
+    letters.forEach(element => {
+        element.children[0].style.transform =  'rotateY(0deg)'
+    });
+   tried_letters_list.innerHTML= ""
+   tried_letters = []
 
     console.log("restart")
+
+    win_popup.style.display = "none"
+    gameover_popup.style.display = "none"
     
+ }
+
+function checkTriedLetters(letter){
+
+    if(tried_letters.includes(letter)){
+        /*uyarı css */
+        console.log("1")
+        return false
+        
+    }
+    else{
+        tried_letters.push(letter)
+
+        
+        console.log("2")
+
+        
+    }
+
+    tried_letters_list.innerHTML = ""
+
+    tried_letters.forEach(element => {
+        tried_letters_list.innerHTML +=  `<li><span>${element}</span></li>`
+        console.log("yapıldı")
+    });
+
+    return true
  }
 
  function submit_letter() {
@@ -56,79 +84,100 @@ function lives_count_adjuster(lives_count){
         if(wanted_word.indexOf(input.value.toUpperCase())>= 0 ){
 
             /* TAM BULMAK */
- 
             if(input.value.toUpperCase() == wanted_word){
 
                 letters.forEach(element => {
                     element.children[0].style.transform =  'rotateY(180deg)'
                 });
+                score = 100
+                win_popup.style.display = "flex"
+
+                
                 
             }
 
-             /* 1 HARFİ BULMAK */
-    
+            /* 1 HARFİ BULMAK */
             else{
                 console.log("o harf var")
                 let found_letter_index = wanted_word.indexOf(input.value.toUpperCase())
-                let found_letter = letters[found_letter_index].children[0]
-     
-                found_letter.style.transform = 'rotateY(180deg)'
 
-                tried_letters_list.innerHTML +=  `<li><span>${wanted_word[found_letter_index]}</span></li>`
+                if(checkTriedLetters(wanted_word[found_letter_index])){
+                    score += 20
 
-                scrore += 20
+                    let found_letter = letters[found_letter_index].children[0]
+         
+                    found_letter.style.transform = 'rotateY(180deg)'
 
-            /*
-                score'a html css çalış
-            */
+                    if(wanted_word.split("").every(attemptedLetter => tried_letters.includes(attemptedLetter))){
+                        win_popup.style.display = "flex"
+
+                    }
+                }
             }
-    
+
         }
-    
+
         else{
 
+                /*YANLIŞ TAHMİN */
+                if(input.value.length == 5){
+    
+                    console.log("direkt kayıp")
+                    lives_count = 0
+                    lives_count_adjuster(lives_count)
 
-            if(input.value.length == 5){
-
-                console.log("direkt kayıp")
-                lives_count = 0
-                lives_count_adjuster(lives_count)
-
-                if(lives_count == 0){
-
+                    restart_game()
+    
+    
                     console.log("gameover popup")
                     gameover_popup.style.display = 'flex'
+                    
+    
+    
                 }
+    
+                /*YANLIŞ HARF TAHMİN */
+                else{
+                    if(checkTriedLetters(input.value.toUpperCase())){
+                        console.log("o harf yok")
+    
+            
+    
+                  
+    
+                        lives_count -= 1
+        
+                        lives_count_adjuster(lives_count)
+        
+                
+                        if(lives_count == 0){
 
-
-            }
-
-            else{
-                console.log("o harf yok")
-
-                tried_letters_list.innerHTML +=  `<li><span>${input.value.toUpperCase()}</span></li>`
-
-                lives_count -= 1
-
-                lives_count_adjuster(lives_count)
-
-                if(lives_count == 0){
-                    console.log("gameover popup")
-                    gameover_popup.style.display = 'flex'
+                            restart_game()
+                            console.log("gameover popup")
+                            gameover_popup.style.display = 'flex'
+                        }
+    
+    
+    
+                    }
+    
+    
+    
                 }
-
-            }
-
+    
         }
+    
     }
 
     else{
         alert("1 Ttane harf girin ya da 5 harflik bir tahmin yapın")
-                  /*Kırmızı error css */
 
     }
-    console.log("geldi buraya")
-
     input.value = ""
+    console.log(score)
+
+    score_ui.forEach(element => {
+        element.innerHTML = `Score : ${score}`})
+    
  }
 
