@@ -23,19 +23,11 @@ let tried_letters_list = document.querySelector(".letter_list")
 
 function lives_count_adjuster(lives_count){
 
-
-
 }
-
-
  function game() {
     restart_button.addEventListener('click', restart_game)
 
     submit_button.addEventListener('click', submit_letter)
-    
-
-
-    
  }
 
  function restart_game() {
@@ -45,10 +37,6 @@ function lives_count_adjuster(lives_count){
     score 0
     tried letters 0
     harfler döndür
-
-    
-    
-    
     */
 
     console.log("restart")
@@ -89,12 +77,7 @@ function lives_count_adjuster(lives_count){
         }
     
         else if(wanted_word.indexOf(input.value.toUpperCase())< 0){
-    
-    
-    
 
-    
-            
 
             if(input.value.length == 5){
 
@@ -108,40 +91,20 @@ function lives_count_adjuster(lives_count){
 
                 tried_letters_list.innerHTML +=  `<li><span>${input.value.toUpperCase()}</span></li>`
 
-                
-
-
-
                             /*
 
                          kalp düşür
     
             */
             }
-    
-    
-    
+
         }
-
-
-
     }
     else{
         alert("1 Ttane harf girin ya da 5 harflik bir tahmin yapın")
                   /*Kırmızı error css */
 
     }
-    
-
-    
-
-    
-
  }
 
  game()
-
-
-
-
-    
