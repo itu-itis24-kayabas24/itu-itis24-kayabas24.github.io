@@ -96,7 +96,11 @@ function submit_letter() {
                     found_letter.style.transform = 'rotateY(180deg)'
 
                     if(wanted_word.split("").every(attemptedLetter => tried_letters.includes(attemptedLetter))){
-                        win_popup.style.display = "flex"
+                        setTimeout(function() {
+                            win_popup.style.display = "flex"
+                          }, 1000);
+
+                        
 
                     }
                 }
@@ -110,10 +114,15 @@ function submit_letter() {
 
                 lives_count = 0
                 lives_count_adjuster(lives_count)
+                letters.forEach(element => {
+                    element.children[0].style.transform =  'rotateY(0deg)'
+                });
+                setTimeout(function() {
+                    gameover_popup.style.display = 'flex'
+                  }, 1000);
+                
 
-                restart_game()
-
-                gameover_popup.style.display = 'flex'
+                
 
             }
     
@@ -139,7 +148,7 @@ function submit_letter() {
     }
 
     else{
-        alert("1 Ttane harf girin ya da 5 harflik bir tahmin yapın")
+        alert("1 Tane harf girin ya da 5 harflik bir tahmin yapın")
     }
     input.value = ""
     
