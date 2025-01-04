@@ -34,7 +34,8 @@ function restart_game() {
     lives_count = 3
     lives_count_adjuster(lives_count)
     score = 0
-
+    score_ui.forEach(element => {
+        element.innerHTML = `Score : ${score}`})
     letters.forEach(element => {
         element.children[0].style.transform =  'rotateY(0deg)'
     });
