@@ -80,7 +80,7 @@ function submit_letter() {
                 score = 100                        
                 setTimeout(function() {
                     win_popup.style.display = "flex"
-                }, 1000);
+                    }, 1000);
 
             }
 
