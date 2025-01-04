@@ -134,9 +134,13 @@ function submit_letter() {
                     lives_count_adjuster(lives_count)
         
                     if(lives_count == 0){
-
                         restart_game()
-                        gameover_popup.style.display = 'flex'
+                        setTimeout(function() {
+                            gameover_popup.style.display = "flex"
+                            }, 1000);
+
+                        
+                        
                     }
 
                 }
