@@ -77,11 +77,11 @@ function submit_letter() {
                 letters.forEach(element => {
                     element.children[0].style.transform =  'rotateY(180deg)'
                 });
-                score = 100
-                win_popup.style.display = "flex"
+                score = 100                        
+                setTimeout(function() {
+                    win_popup.style.display = "flex"
+                }, 1000);
 
-                
-                
             }
 
             /* 1 HARFİ BULMAK */
